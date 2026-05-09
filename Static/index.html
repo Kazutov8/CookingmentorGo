@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Добавлено для корректного отображения на мобильных -->
+    <title>Чат-система Go + SQLite (AI Tutor)</title>
+    <!-- Путь к стилям теперь должен работать после исправления main.go -->
+    <link rel="stylesheet" href="/styles/styles.css">
+</head>
+<body>
+    <div class="main-layout">
+        <!-- СТОРОНА 1: САЙДБАР С СЕССИЯМИ -->
+        <aside id="sessionSidebar">
+            <h3>История сессий</h3>
+            <div id="sessionList">
+                <!-- Сессии будут загружены сюда JS'ом -->
+            </div>
+            <hr style="margin: 20px 0;">
+            <!-- Кнопка для создания новой тестовой сессии (для тестирования) -->
+            <button id="newSessionButton">+ Новая сессия</button>
+        </aside>
+        <!-- СТОРОНА 2: ОСНОВНОЕ ОКНО ЧАТА -->
+        <main id="chatArea">
+            <!-- Заголовок чата и информация о сессии -->
+            <div style="margin-bottom: 15px;">
+                <h1 id="chatTitleHeader">Чат</h1>
+                <small id="currentSessionID" style="color:#888;">Сессия ID:</small>
+            </div>
+            <!-- Контейнер истории сообщений -->
+            <div class="chat-history-container" id="chatHistory">
+                <!-- Здесь будет отображаться история, загруженная через JS -->
+            </div>
+            <!-- Форма ввода сообщения -->
+            <div class="message-input-container">
+                <form id="messageForm">
+                    <textarea id="messageInput" placeholder="Введите ваше сообщение..." rows="1" required></textarea>
+                    <button type="submit" id="sendButton">Отправить</button>
+                </form>
+            </div>
+        </main>
+    </div>
+    <!-- Пути к скриптам теперь должны работать после исправления main.go -->
+    <script type="module" src="/js/apiService.js"></script>
+    <script type="module" src="/js/uiRenderer.js"></script>
+    <script type="module" src="/js/mainController.js"></script>
+</body>
+</html>
